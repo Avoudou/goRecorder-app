@@ -11,6 +11,10 @@
 	
 	var socket = new WebSocket(url);
 	
+	socket.onopen=onOpen;
+	function onOpen(event){
+		
+	}
 
 	var constraints={
 			video:true,
@@ -24,7 +28,7 @@
 		
 	});
 
-	 setInterval(main,30);
+	 setInterval(main ,100);
 	
 	
     function main(){
@@ -51,7 +55,7 @@
 		}
 		
        socket.send( new Blob([new Uint8Array(charArray)],{
-    	   type:'image/jpeg'
+    	   tpye:'image/jpeg'
        }));		
 	
         socket.addEventListener('message',function(event){
@@ -60,5 +64,7 @@
 		
 	}
 	
+		
+		
 	
 })();
